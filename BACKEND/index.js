@@ -16,7 +16,10 @@ yargs(hideBin(process.argv))
             type: "string"
         })
     },
-        addRepo)
+    (argv)=>{
+        addRepo(argv.file)
+    }
+)
     .command("push", "push the file to the repository", {},pushRepo)
     .command("pull", "Initalise the new repository", {}, initRepo)
     .command("commit <message>", "Initalise the new repository",(yargs)=>{

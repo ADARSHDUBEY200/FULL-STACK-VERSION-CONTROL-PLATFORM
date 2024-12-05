@@ -1,4 +1,5 @@
 const { exec } = require("child_process");
+const { Console, clear } = require("console");
 const fs = require("fs");
 const path = require("path");
 
@@ -60,31 +61,42 @@ const path = require("path");
 
  
 // Create a folder path
-const repopath = path.resolve(process.cwd(), '-hapnagit5');
+// const repopath = path.resolve(process.cwd(), '-hapnagit5');
 
-// Create the folder
-fs.mkdir(repopath, { recursive: true }, (err) => {
-  if (err) {
-    console.log("The error occurred while creating the folder: " + err);
-    return;
-  }
+// // Create the folder
+// fs.mkdir(repopath, { recursive: true }, (err) => {
+//   if (err) {
+//     console.log("The error occurred while creating the folder: " + err);
+//     return;
+//   }
   
-  console.log("Directory created successfully.");
+//   console.log("Directory created successfully.");
 
-  // Set the folder as hidden using the 'attrib' command (Windows-specific)
-  exec(`attrib +h "${repopath}"`, (error, stdout, stderr) => {
-    if (error) {
-      console.log(`Error setting hidden attribute: ${error.message}`);
-      return;
-    }
-    if (stderr) {
-      console.log(`stderr: ${stderr}`);
-      return;
-    }
-    console.log(`Folder '${repopath}' is now hidden!`);
-  });
-});
+//   // Set the folder as hidden using the 'attrib' command (Windows-specific)
+//   exec(`attrib +h "${repopath}"`, (error, stdout, stderr) => {
+//     if (error) {
+//       console.log(`Error setting hidden attribute: ${error.message}`);
+//       return;
+//     }
+//     if (stderr) {
+//       console.log(`stderr: ${stderr}`);
+//       return;
+//     }
+//     console.log(`Folder '${repopath}' is now hidden!`);
+//   });
+// });
 
+
+// console.log(" the directory is : "+process.cwd());
+
+const path1 = path.resolve(process.cwd(),"basics");
+ fs.mkdir("path1", (err)=>{
+  if(err){
+    console.log("THERE IS AN ERROR ")
+  }
+
+  console.log("the file is now created")
+})
   
   
   
