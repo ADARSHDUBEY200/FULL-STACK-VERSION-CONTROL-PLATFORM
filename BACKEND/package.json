@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "uuid": "^11.0.3",
     "yargs": "^17.7.2"
   }
 }

@@ -27,7 +27,10 @@ yargs(hideBin(process.argv))
             describe:"Commit message",
             type:"string"
         })
-    }, commitRepo)
+    }, (argv)=>{
+        commitRepo(argv.message)
+    }
+)
     .command("revert <commitId>", "Revert To The Specific commit",(yargs)=>{
         yargs.positional("commitId",{
             describe:"commit Id to Revert to",

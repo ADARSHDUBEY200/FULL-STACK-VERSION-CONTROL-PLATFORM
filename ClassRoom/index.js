@@ -89,14 +89,38 @@ const path = require("path");
 
 // console.log(" the directory is : "+process.cwd());
 
-const path1 = path.resolve(process.cwd(),"basics");
- fs.mkdir("path1", (err)=>{
-  if(err){
-    console.log("THERE IS AN ERROR ")
-  }
+// const path1 = path.resolve(process.cwd(),"basics");
+//  fs.mkdir("path1", (err)=>{
+//   if(err){
+//     console.log("THERE IS AN ERROR ")
+//   }
 
-  console.log("the file is now created")
-})
+//   console.log("the file is now created")
+// })
+
+const repoPath= path.resolve(process.cwd(),"Try")
+// // console.log(repop)
   
+// // const fs = require('fs');
+
+// fs.readdir(repoPath, { withFileTypes: true }, (err, files) => {
+//   if (err) {
+//     console.error("Error reading directory:", err);
+//     return;
+//   }
+
+//   for (const key of files) {
+//     console.log(key); // Access the name of the file or directory
+//   }
+// });
+
+fs.copyFile(path.join(repoPath,"Adarsh.txt"), path.join(process.cwd(),"Adarsh.txt"),(err)=>{
+  if(err){
+    console.log("the error is : "+err)
+  }else{
+    console.log("THE FILE IS NOW COPIED : ")
+  }
+});
+
   
   
